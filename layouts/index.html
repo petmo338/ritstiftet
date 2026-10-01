@@ -5,63 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Site.Title }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
-  <link rel="icon" href="{{ "images/Loogo-kvadrat-e1677836646218-300x300.jpg" | relURL }}">
+  <link rel="icon" href="{{ "images/logo.jpg" | relURL }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&family=Roboto:wght@400;700&display=swap">
   {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 </head>
 <body>
-  <header class="top">
-    <a href="#hem" class="logo"><img src="{{ "images/Loogo-kvadrat-e1677836646218-300x300.jpg" | relURL }}" alt="Ritstiftet" width="50" height="50"></a>
-    <nav>
-      <a href="#beskrivningar">Beskrivningar</a>
-      <a href="#about">Om mig</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-  </header>
+  <div class="hero" id="hem">
+    <header class="top">
+      <a href="#hem" class="logo"><img src="{{ "images/logo.jpg" | relURL }}" alt="Ritstiftet" width="149" height="50"></a>
+      <nav>
+        <a href="#hem">Hem</a>
+        <a href="#beskrivningar">Beskrivningar</a>
+        <a href="#about">Om mig</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h2>RITSTIFTET ARKITEKTKONTOR</h2>
+        <h2>Arkitekt – Beskrivare</h2>
+      </div>
+      <img src="{{ "images/beziers-filter.jpg" | relURL }}" alt="" width="467" height="467">
+    </div>
+  </div>
 
-  <section id="hem" class="hero" style="background-image:url('{{ "images/beziers-filter.jpg" | relURL }}')">
-    <div>
-      <h1>RITSTIFTET ARKITEKTKONTOR</h1>
-      <p>Arkitekt – Beskrivare</p>
+  <section id="beskrivningar" class="white">
+    <div class="wrap">
+      <div class="gallery">
+        <img src="{{ "images/IMG_0801-1.jpg" | relURL }}" alt="" width="184" height="184" loading="lazy">
+        <img src="{{ "images/IMG_1001-1.jpg" | relURL }}" alt="" width="184" height="184" loading="lazy">
+        <img src="{{ "images/IMG_8792.jpg" | relURL }}" alt="" width="236" height="236" loading="lazy">
+      </div>
+      <h3>BESKRIVNINGAR</h3>
+      <p>Beskrivningar enligt AMA. Rumsbeskrivningar. Material- och Kulörbeskrivningar.</p>
+      <div class="cols">
+        <div>
+          <p>Ritstiftet Arkitektkontor utför i samarbete med Mikael Löfqvist Byggbeskrivningar AB alla typer av beskrivningar.<br>Teknisk Beskrivning Bygg, dvs fullständiga AMA-beskrivningar för utförandeentreprenader.<br>Byggdelsbeskrivningar och Rambeskrivningar för Totalentreprenader.<br>Gäller alla skeden såsom Systemhandling, Förfrågningsunderlag och Bygghandling.</p>
+        </div>
+        <div>
+          <p>Ska produkterna i projektet registreras hanteras Byggvarubedömningen och SundaHus.</p>
+          <p>Jag utför även Rumsbeskrivningar, Material- och Kulörbeskrivningar samt illustrativa Presentationer av Kulörer och Material.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <main>
-    <section id="beskrivningar">
-      <h2>Beskrivningar</h2>
-      <p class="lead">Beskrivningar enligt AMA. Rumsbeskrivningar. Material- och Kulörbeskrivningar.</p>
-      <p>Ritstiftet Arkitektkontor utför i samarbete med Mikael Löfqvist Byggbeskrivningar AB alla typer av beskrivningar. Teknisk Beskrivning Bygg, dvs fullständiga AMA-beskrivningar för utförandeentreprenader. Byggdelsbeskrivningar och Rambeskrivningar för Totalentreprenader. Gäller alla skeden såsom Systemhandling, Förfrågningsunderlag och Bygghandling.</p>
-      <p>Ska produkterna i projektet registreras hanteras Byggvarubedömningen och SundaHus.</p>
-      <p>Jag utför även Rumsbeskrivningar, Material- och Kulörbeskrivningar samt illustrativa Presentationer av Kulörer och Material.</p>
-      <div class="gallery">
-        <img src="{{ "images/IMG_0801-1.jpg" | relURL }}" alt="" loading="lazy">
-        <img src="{{ "images/IMG_1001-1.jpg" | relURL }}" alt="" loading="lazy">
-        <img src="{{ "images/IMG_8792.jpg" | relURL }}" alt="" loading="lazy">
-      </div>
-      <h3>Några av de företag vi jobbat med</h3>
-      <img class="clients" src="{{ "images/clients.png" | relURL }}" alt="Kundlogotyper" loading="lazy">
+  <section class="clients-band">
+    <div class="wrap narrow center">
+      <p class="band-title">Några av de företag vi jobbat med.</p>
+      <img src="{{ "images/clients.png" | relURL }}" alt="Tengbom, Norconsult, Sweco, Dayspring, Arkitektbyrån Design, Krook &amp; Tjäder, Semrén + Månsson, Wahlström &amp; Steijner" width="800" height="144" loading="lazy">
       <p>Kontakta oss för referenser.</p>
-    </section>
+    </div>
+  </section>
 
-    <section id="about">
-      <h2>Om mig</h2>
-      <div class="about">
-        <img src="{{ "images/foto-linkedin-kopia.jpg" | relURL }}" alt="Jeanette Gustafsson Möller" width="142" height="189">
-        <div>
-          <p><strong>Jeanette Gustafsson Möller</strong>, Arkitekt SAR/MSA med 18 års erfarenhet. Som projekterande arkitekt har jag jobbat på flera arkitektkontor i Göteborg. Med uppdrag inom skola, kontor, hotell, lokaler och offentliga byggnader finns kunskap om varierande projekttyper.</p>
-          <p>Som beskrivare på konsultbasis har jag sedan 2019 samarbetat med MLB AB.</p>
-          <p>Ritstiftet Arkitektkontor har funnits sedan 2007 och gick 2020 in som särskilt företagsnamn i Decada AB.</p>
-        </div>
+  <section id="about" class="about-band">
+    <div class="wrap narrow">
+      <div class="center"><img class="portrait" src="{{ "images/foto-linkedin-kopia.jpg" | relURL }}" alt="Jeanette Gustafsson Möller" width="142" height="189" loading="lazy"></div>
+      <p>Jeanette Gustafsson Möller, Arkitekt SAR/MSA med 18 års erfarenhet.<br>Som projekterande arkitekt har jag jobbat på flera arkitektkontor i Göteborg. Med uppdrag inom skola, kontor, hotell, lokaler och offentliga byggnader finns kunskap om varierande projekttyper.</p>
+      <p>Som beskrivare på konsultbasis har jag sedan 2019 samarbetat med MLB AB.</p>
+      <p>Ritstiftet Arkitektkontor har funnits sedan 2007 och gick 2020 in som särskilt företagsnamn i Decada AB.</p>
+      <div id="kontakt" class="center contact">
+        <p>Kontakt</p>
+        <p>E-post: <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+        <p>Telefon: <a href="tel:{{ replace .Site.Params.phone " " "" }}">{{ .Site.Params.phone }}</a></p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-      <p>E-post: <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a><br>
-      Telefon: <a href="tel:{{ replace .Site.Params.phone " " "" }}">{{ .Site.Params.phone }}</a></p>
-    </section>
-  </main>
-
-  <footer>© {{ now.Year }} ritstiftet.se</footer>
+  <footer>Copyright © {{ now.Year }} ritstiftet.se</footer>
 </body>
 </html>
