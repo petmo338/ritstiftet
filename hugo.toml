@@ -1,0 +1,12 @@
+baseURL = 'https://ritstiftet.se/'
+languageCode = 'sv-SE'
+title = 'Ritstiftet Arkitektkontor'
+disableKinds = ['taxonomy', 'term', 'RSS', 'sitemap']
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+description = 'Ritstiftet Arkitektkontor – Arkitekt och beskrivare. Beskrivningar enligt AMA, rumsbeskrivningar, material- och kulörbeskrivningar.'
+email = 'jeanette@ritstiftet.se'
+phone = '+46 733 74 54 30'
